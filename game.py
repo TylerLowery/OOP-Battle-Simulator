@@ -17,6 +17,7 @@ def main():
     total_damage=0
     rounds=0
     Criticals_hits = 0
+    Miss_attack = 0
 
     # Battle Loop 
     while hero.is_alive() and any(goblin.is_alive() for goblin in goblins):
@@ -28,6 +29,9 @@ def main():
         if hero.crit_hit() > 74:
             damage += 25
             Criticals_hits += 1
+        if hero.crit_hit() < 26:
+            damage = 0
+            Miss_attack += 1
         total_damage += damage
         print(f"Hero attacks {target_goblin.name} for {damage} damage!")
         target_goblin.take_damage(damage)
@@ -55,6 +59,7 @@ def main():
     print(f"total damage dealt " + str(total_damage))
     print(f"round " + str(rounds))
     print(f"critical hits landed " + str(Criticals_hits))
+    print(f"Missed Attacks " + str (Miss_attack))
 
 if __name__ == "__main__":
     main()
