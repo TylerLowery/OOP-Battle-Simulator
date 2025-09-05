@@ -39,5 +39,5 @@ class Hero:
         return self.health > 0
     #TODO define is_alive
 
-    def crit_hit(self):
+    def Hero_crit_hit(self):
         return random.randint(1, 100)

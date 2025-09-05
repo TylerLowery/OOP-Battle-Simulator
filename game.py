@@ -1,6 +1,7 @@
 import random
 from goblin import Goblin
 from hero import Hero
+from boss import MrSpeak
 
 def main():
     print("Welcome to the Battle Arena!")
@@ -10,7 +11,7 @@ def main():
     hero = Hero("Tony Stark")
 
     # Create goblins ༼ ºل͟º ༽ ༼ ºل͟º ༽ ༼ ºل͟º ༽
-    goblins = [Goblin(f"Goblin {i+1}") for i in range(3)]
+    goblins = [Goblin(f"Goblin {i+1}", "green") for i in range(3)]
 
     # Keep track of stats
     defeated_goblins = 0
@@ -26,10 +27,10 @@ def main():
         # Hero's turn to attack
         target_goblin = random.choice([goblin for goblin in goblins if goblin.is_alive()])
         damage = hero.strike()
-        if hero.crit_hit() > 74:
+        if hero.Hero_crit_hit() > 74:
             damage += 25
             Criticals_hits += 1
-        if hero.crit_hit() < 26:
+        if hero.Hero_crit_hit() < 26:
             damage = 0
             Miss_attack += 1
         total_damage += damage
