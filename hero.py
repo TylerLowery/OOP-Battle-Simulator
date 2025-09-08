@@ -13,6 +13,12 @@ class Hero:
     """
     
     def __init__(self, name):
+<<<<<<< Updated upstream
+=======
+        self.name = name
+        self.health = 600
+        self.attack_power = random.randint(50, 55)
+>>>>>>> Stashed changes
         #TODO Set the hero's name.
         #TODO Set the hero's health. You might give the hero more health than a goblin.
         #TODO Set the hero's attack power. Should it be more consistent than the goblin's?
